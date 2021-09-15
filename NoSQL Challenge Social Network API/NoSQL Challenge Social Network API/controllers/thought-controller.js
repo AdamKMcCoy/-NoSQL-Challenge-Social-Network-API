@@ -1,9 +1,7 @@
 const Thought = require('../models/Thought');
 const User = require('../models/User');
 const Reaction = require('../models/Reaction');
-
 const thoughtController  = {
-    // retrieve all thoughts
     getAllThoughts(req, res) {
         Thought.find({})
         .populate({
@@ -18,7 +16,6 @@ const thoughtController  = {
             res.sendStatus(400)
         });
     },
-    // create thought
     createThought({ params, body }, res) {
         return Thought.create(body)
         .then(({ _id}) => {
@@ -35,17 +32,14 @@ const thoughtController  = {
             }
             res.json(dbUserData);
         })
-        .catch(err => res.json(err));
-        
+        .catch(err => res.json(err));  
     },
-     // retrieve thought by ID
      getThoughtById({ params }, res) {
         Thought.findOne({ _id: params.id })
         .populate({
             path: 'user',
             select: '-__v'
-        })
-        
+        })  
         .select('-__v')
         .then(dbThoughtData => res.json(dbThoughtData))
         .catch(err => {
@@ -53,7 +47,6 @@ const thoughtController  = {
             res.status(400).json(err)
         });  
     },
-    // delete thought
     deleteThought ({ params }, res) { 
         Thought.findOneAndDelete({ _id: params.id })
         .then(dbThoughtData => {
@@ -65,7 +58,6 @@ const thoughtController  = {
         })
         .catch(err => res.status(400).json(err))
     },
-     // update thought
      updateThought ({ params, body }, res) {
         Thought.findOneAndUpdate({ _id: params.id}, body, {new: true })
         .then(dbThoughtData => {
@@ -77,8 +69,6 @@ const thoughtController  = {
         })
         .catch(err => res.status(400).json(err));
     },
-    
-    // add reaction
     addReaction ({ params, body }, res) {
         Thought.findOneAndUpdate(
            { _id: params.thoughtId },
@@ -94,7 +84,6 @@ const thoughtController  = {
        })
        .catch(err => res.status(500).json(err))
    },
-     // remove reaction
      deleteReaction({ params }, res) {
         Thought.findOneAndUpdate(
             { _id: params.thoughtId },
@@ -105,5 +94,4 @@ const thoughtController  = {
         .catch(err => res.json(err));
     }
 }
-
-module.exports = thoughtController;
+module.exports = thoughtController
