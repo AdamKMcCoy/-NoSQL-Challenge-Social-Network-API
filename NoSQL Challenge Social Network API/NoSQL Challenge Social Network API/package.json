@@ -1,5 +1,5 @@
 {
-  "name": "super-duper-winner",
+  "name": "winner",
   "version": "1.0.0",
   "description": "An API built for a social media platform using MongoDB, Mongoose, and Express. This API has support for Users, Friends, Thoughts, and Reactions.",
   "main": "server.js",
@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WayneEdwards/super-duper-winner.git"
+    "url": "git+https://github.com/AdamKMcCoy/-NoSQL-Challenge-Social-Network-API"
   },
   "author": "Wayne Edwards",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WayneEdwards/super-duper-winner/issues"
+    "url": "https://github.com/AdamKMcCoy/-NoSQL-Challenge-Social-Network-API"
   },
-  "homepage": "https://github.com/WayneEdwards/super-duper-winner#readme"
+  "homepage": "https://github.com/AdamKMcCoy/-NoSQL-Challenge-Social-Network-API"
 }
