@@ -1,4 +1,4 @@
-## Module 18 Challenge: NoSQL Challenge: Social Network API
+##NoSQL Challenge: Social Network API
 ### Description
 An API built for a social media platform using MongoDB, Mongoose, and Express. This API has support for Users, Friends, Thoughts, and Reactions.
 ### USER Story
